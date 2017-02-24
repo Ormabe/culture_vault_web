@@ -36,7 +36,6 @@ Object.keys(db).forEach(function(modelName) {
   }
 });
 
-seedFunction();
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
