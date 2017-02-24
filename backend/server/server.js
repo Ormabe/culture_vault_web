@@ -16,8 +16,9 @@ const passport = require('./config/passport');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
-// const models = require('./models');
-
+const models = require('./models');
+var seedFunction = require('../seeds/index.js')
+seedFunction();
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 app.use(cors())
@@ -70,6 +71,7 @@ app.get('/*', (req, res) => {
 
 
 app.listen(process.env.PORT || 2222, function(){
+
   console.log('CORS-enabled web server listening at https://localhost:2222');
 });
 
