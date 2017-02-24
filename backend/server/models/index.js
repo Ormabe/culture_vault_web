@@ -15,8 +15,7 @@ if (process.env.DATABASE_URL) {
   	host: process.env.db_host,
     port: process.env.db_port,
     dialect: "postgres",
-    storage: "./session.postgres",
-    native: true
+    storage: "./session.postgres"
   });
 } else if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
