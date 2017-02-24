@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/Ormabe/culture_vault/issues"
   },
+  "engines": {
+    "node": "6.9.1"
+  },
   "homepage": "https://github.com/Ormabe/culture_vault#readme",
   "dependencies": {
     "axios": "^0.15.3",
