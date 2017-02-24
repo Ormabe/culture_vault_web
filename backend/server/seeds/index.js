@@ -6,12 +6,12 @@
 // let recipes = require('./recipes-seed.js');
 // let steps = require('./steps-seed.js');
 
-//Import db
-let db = require('../db');
+//Import models
+let models = require('../models');
 
 
 const seedFunction = () => {
-	db.Users.bulkCreate([
+	models.Users.bulkCreate([
 	{
 	first_name: "Chanice",
 	last_name: "St. Louis",
@@ -42,7 +42,7 @@ const seedFunction = () => {
 	// PASSWORD: ihatepasswords31-00
 	password: "$2a$10$C3LQE66CVilaPKYwQMmh0OM.a3eaU7WvKMy6Vz/5/ILCt2xk7IUbm",
 	email: "niko@zol.com",
-	image: "https://s25.postimg.org/5fhbbdodb/niko_law.jpg",
+	image: "https://s25.postimg.org/5fhbbdomodels/niko_law.jpg",
 	location: "Brooklyn",
 	bio: "Devs Do It Better"
 	},
@@ -59,7 +59,7 @@ const seedFunction = () => {
 	}
 
 	]).then(data => {
-		db.Experiences.bulkCreate([
+		models.Experiences.bulkCreate([
 		{
 		name: "Oba No Chanko Nabe",
 		fav: 4,
@@ -128,7 +128,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		}
 	])
 	}).then(data => {
-	db.Locations.bulkCreate([
+	models.Locations.bulkCreate([
 	{
 	continent: "North America",
 	country: "United States",
@@ -169,7 +169,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 	}
 	])
 	}).then(data => {
-	db.Recipes.bulkCreate([
+	models.Recipes.bulkCreate([
 
 	{
 	name: 'Chanko Nabe',
@@ -205,7 +205,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 	}
 		])
 	}).then(data => {
-		db.Ingredients.bulkCreate([
+		models.Ingredients.bulkCreate([
 		{
 		ingredients:"Chef Boyardee Rigatoni",
 		quantity:1,
@@ -348,7 +348,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		}
 	])
 	}).then(data => {
-		db.Comment.bulkCreate([
+		models.Comment.bulkCreate([
 			{
 		    "comment": "This is my fourth comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:07:08.136Z",
@@ -416,7 +416,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		  }
 		])
 	}).then(data => {
-		db.Likes.bulkCreate([
+		models.Likes.bulkCreate([
 		{
 			ExperienceId:1,
 			UserId:1
@@ -459,7 +459,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		}
 			])
 	}).then(data => {
-		db.Steps.bulkCreate([
+		models.Steps.bulkCreate([
 		{
 			steps: 'Boil ingredients in stone pot',
 			RecipeId:1
@@ -579,7 +579,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		}
 	])
 	}).then(data => {
-		db.ExperiencesLocations.bulkCreate([
+		models.ExperiencesLocations.bulkCreate([
 		{
 			LocationId:1,
 			ExperienceId:2
