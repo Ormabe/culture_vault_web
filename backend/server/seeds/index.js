@@ -6,12 +6,12 @@
 // let recipes = require('./recipes-seed.js');
 // let steps = require('./steps-seed.js');
 
-//Import Models
-//let models = require('../models');
+//Import db
+let db = require('../db');
 
 
 const seedFunction = () => {
-	models.Users.bulkCreate([
+	db.Users.bulkCreate([
 	{
 	first_name: "Chanice",
 	last_name: "St. Louis",
@@ -59,7 +59,7 @@ const seedFunction = () => {
 	}
 
 	]).then(data => {
-		models.Experiences.bulkCreate([
+		db.Experiences.bulkCreate([
 		{
 		name: "Oba No Chanko Nabe",
 		fav: 4,
@@ -128,7 +128,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		}
 	])
 	}).then(data => {
-	models.Locations.bulkCreate([
+	db.Locations.bulkCreate([
 	{
 	continent: "North America",
 	country: "United States",
@@ -169,7 +169,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 	}
 	])
 	}).then(data => {
-	models.Recipes.bulkCreate([
+	db.Recipes.bulkCreate([
 
 	{
 	name: 'Chanko Nabe',
@@ -205,7 +205,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 	}
 		])
 	}).then(data => {
-		models.Ingredients.bulkCreate([
+		db.Ingredients.bulkCreate([
 		{
 		ingredients:"Chef Boyardee Rigatoni",
 		quantity:1,
@@ -348,7 +348,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		}
 	])
 	}).then(data => {
-		models.Comment.bulkCreate([
+		db.Comment.bulkCreate([
 			{
 		    "comment": "This is my fourth comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:07:08.136Z",
@@ -416,7 +416,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		  }
 		])
 	}).then(data => {
-		models.Likes.bulkCreate([
+		db.Likes.bulkCreate([
 		{
 			ExperienceId:1,
 			UserId:1
@@ -459,7 +459,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		}
 			])
 	}).then(data => {
-		models.Steps.bulkCreate([
+		db.Steps.bulkCreate([
 		{
 			steps: 'Boil ingredients in stone pot',
 			RecipeId:1
@@ -579,7 +579,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		}
 	])
 	}).then(data => {
-		models.ExperiencesLocations.bulkCreate([
+		db.ExperiencesLocations.bulkCreate([
 		{
 			LocationId:1,
 			ExperienceId:2
