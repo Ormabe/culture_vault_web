@@ -7,7 +7,7 @@
 // let steps = require('./steps-seed.js');
 
 //Import Models
-let models = require('../models');
+//let models = require('../models');
 
 
 const seedFunction = () => {
