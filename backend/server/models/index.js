@@ -9,9 +9,14 @@ var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
 if (process.env.DATABASE_URL) {
-  var sequelize = new Sequelize(process.env.DATABASE_URL, {
+  var sequelize = new Sequelize(process.env.DATABASE_URL,
+  								 process.env.db_user,
+  								 process.env.db_password, {
+  	host: process.env.db_host,
+    port: process.env.db_port,
     dialect: "postgres",
-    storage: "./session.postgres"
+    storage: "./session.postgres",
+    native: true
   });
 } else if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
