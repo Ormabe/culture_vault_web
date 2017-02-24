@@ -17,7 +17,6 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
 const models = require('./models');
-var seedFunction = require('../seeds/index.js')
 seedFunction();
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
