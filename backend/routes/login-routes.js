@@ -15,7 +15,7 @@ router.post('/login',
         if (err) { res.status(401).end(); return; }
         // res.send(JSON.stringify(user)).end();
 
-        res.send(`http://localhost:2222/users/${user.id}`)
+        res.send(`https://culture-vault.herokuapp.com/users/${user.id}`)
       });
     })(req, res, next);
   })
