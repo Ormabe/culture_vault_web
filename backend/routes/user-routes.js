@@ -144,7 +144,10 @@ const findLoginUser = (req,res) => {
     .then(likes => userProfile.likes = likes)
 
     .then(data => res.send(userProfile))
-    .catch(err => res.status(500).send(err));
+    .catch(err => {
+    	console.log(err)
+    	res.status(500).send(err)
+     });
 }
 
 
