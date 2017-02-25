@@ -8092,10 +8092,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var FETCH_EXPERIENCE = exports.FETCH_EXPERIENCE = 'FETCH_EXPERIENCE';
 var CREATE_EXPERIENCE = exports.CREATE_EXPERIENCE = 'CREATE_EXPERIENCE';
 
-var ROOT_URL = 'http://localhost:2222/api/experiences/';
+var URL = '/api/experiences/';
 
 function fetchExperience(id) {
-	var request = _axios2.default.get('' + ROOT_URL + id);
+	var request = _axios2.default.get('' + URL + id);
 
 	return {
 		type: FETCH_EXPERIENCE,
@@ -8104,7 +8104,7 @@ function fetchExperience(id) {
 }
 
 function createNewExperience(id, state) {
-	var request = _axios2.default.post(ROOT_URL + '/create/' + id, { state: state });
+	var request = _axios2.default.post(URL + '/create/' + id, { state: state });
 
 	return {
 		type: CREATE_EXPERIENCE,
@@ -8133,10 +8133,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var FETCH_LOCATION = exports.FETCH_LOCATION = 'LOCATIONS_FETCH_LOCATION';
 
-var ROOT_URL = 'http://localhost:2222/api/explore/country/';
+var URL = '/api/explore/country/';
 
 function getCountryExperience(countryId) {
-	var request = _axios2.default.get('' + ROOT_URL + countryId);
+	var request = _axios2.default.get('' + URL + countryId);
 	return {
 		type: FETCH_LOCATION,
 		payload: request
@@ -12212,10 +12212,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var FETCH_COMMENTS = exports.FETCH_COMMENTS = 'FETCH_COMMENTS';
 
-var ROOT_URL = 'http://localhost:2222/api/comments/';
+var URL = '/api/comments/';
 
 function fetchComments(id) {
-	var request = _axios2.default.get('' + ROOT_URL + id);
+	var request = _axios2.default.get('' + URL + id);
 
 	return {
 		type: FETCH_COMMENTS,
@@ -12244,10 +12244,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var FETCH_LIKES = exports.FETCH_LIKES = 'FETCH_LIKES';
 
-var ROOT_URL = 'http://localhost:2222/api/likes/';
+var URL = '/api/likes/';
 
 function fetchLikes(id) {
-	var request = _axios2.default.get('' + ROOT_URL + id);
+	var request = _axios2.default.get('' + URL + id);
 
 	return {
 		type: FETCH_LIKES,
@@ -12278,10 +12278,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var FETCH_LOCATION = exports.FETCH_LOCATION = 'FETCH_LOCATION';
 
-var ROOT_URL = 'http://localhost:2222/api/explore/countries';
+var URL = '/api/explore/countries';
 
 function fetchExploreLocations() {
-	var request = _axios2.default.get(ROOT_URL);
+	var request = _axios2.default.get(URL);
 
 	return {
 		type: FETCH_LOCATION,
@@ -12310,10 +12310,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var FETCH_FEATURES = exports.FETCH_FEATURES = 'FETCH_FEATURES';
 
-var ROOT_URL = 'http://localhost:2222/api/experiences/discover/featured';
+var URL = '/api/experiences/discover/featured';
 
 function getFeature() {
-	var request = _axios2.default.get(ROOT_URL);
+	var request = _axios2.default.get(URL);
 	return {
 		type: 'FETCH_FEATURES',
 		payload: request
@@ -12341,10 +12341,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var LOGIN_USER = exports.LOGIN_USER = 'LOGIN_USER';
 
-var ROOT_URL = 'http://localhost:2222/api/login/';
+var URL = '/api/login/';
 
 function loginUserFunc(email, password) {
-  var loginUser = _axios2.default.post('' + ROOT_URL, {
+  var loginUser = _axios2.default.post('' + URL, {
     email: email,
     password: password
   }).then(function (response) {
@@ -12378,10 +12378,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var EXPLORE_SEARCH = exports.EXPLORE_SEARCH = 'EXPLORE_SEARCH';
 
-var ROOT_URL = 'http://localhost:2222/api/explore/search';
+var URL = '/api/explore/search';
 
 function exploreSearch(search) {
-  var postSearch = _axios2.default.post('' + ROOT_URL, {
+  var postSearch = _axios2.default.post('' + URL, {
     search: search
   }).then(function (response) {
     console.log('[=== SEARCH ACTION FIRED ===]');
@@ -12416,10 +12416,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CREATE_USER = exports.CREATE_USER = 'CREATE_USER';
 
-var ROOT_URL = 'http://localhost:2222/api/users/';
+var URL = '/api/users/';
 
 function createUserForm(email, password) {
-  var postUser = _axios2.default.post('' + ROOT_URL, {
+  var postUser = _axios2.default.post('' + URL, {
     email: email,
     password: password
   }).then(function (response) {
@@ -12455,10 +12455,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var FETCH_USERINFO = exports.FETCH_USERINFO = 'FETCH_USERINFO';
 
-var ROOT_URL = 'http://localhost:2222/api/users/profile/';
+var URL = '/api/users/profile/';
 
 function getuserInfo(userId) {
-	var request = _axios2.default.get('' + ROOT_URL + userId);
+	var request = _axios2.default.get('' + URL + userId);
 	return {
 		type: 'FETCH_USERINFO',
 		payload: request
@@ -12469,10 +12469,10 @@ function getuserInfo(userId) {
 
 var USER_ID = exports.USER_ID = 'USER_ID';
 
-var ROOT_URL2 = 'http://localhost:2222/api/data';
+var URL2 = '/api/data';
 
 function getUserId() {
-	var request2 = _axios2.default.get(ROOT_URL2);
+	var request2 = _axios2.default.get(URL2);
 	return {
 		type: USER_ID,
 		payload: request2
@@ -37789,11 +37789,11 @@ var Comments = function (_Component) {
 			var _this2 = this;
 
 			e.preventDefault();
-			var ROOT_URL = 'http://localhost:2222/api/comments/';
+			var URL = '/api/comments/';
 			var comment = this.state.comment;
 			var experience = this.props.id;
 
-			_axios2.default.post(ROOT_URL + 'experience/' + experience, { comment: comment }).then(function (response) {
+			_axios2.default.post(URL + 'experience/' + experience, { comment: comment }).then(function (response) {
 				console.log(response);
 			}).catch(function (error) {
 				console.log(error);
@@ -37807,9 +37807,9 @@ var Comments = function (_Component) {
 		value: function onSaveClick(commentId, newComment) {
 			var _this3 = this;
 
-			var ROOT_URL = 'http://localhost:2222/api/comments/edit';
+			var URL = '/api/comments/edit';
 
-			_axios2.default.put(ROOT_URL + '/' + commentId, { comment: newComment }).then(function () {
+			_axios2.default.put(URL + '/' + commentId, { comment: newComment }).then(function () {
 				_this3.props.fetchComments(_this3.props.id);
 			});
 		}
@@ -37818,9 +37818,9 @@ var Comments = function (_Component) {
 		value: function onDeleteClick(commentId) {
 			var _this4 = this;
 
-			var ROOT_URL = 'http://localhost:2222/api/comments/delete';
+			var URL = '/api/comments/delete';
 
-			_axios2.default.delete(ROOT_URL + '/' + commentId).then(function () {
+			_axios2.default.delete(URL + '/' + commentId).then(function () {
 				_this4.props.fetchComments(_this4.props.id);
 			});
 		}
@@ -38065,7 +38065,7 @@ var CreateExperience = function (_Component) {
 		value: function axiosCall(e, userId) {
 			e.preventDefault();
 
-			_axios2.default.post('http://localhost:2222/api/experiences/create/' + this.props.params.userId, {
+			_axios2.default.post('/api/experiences/create/' + this.props.params.userId, {
 				quote: this.state.quote,
 				story: this.state.story,
 				image: this.state.image,
@@ -38374,9 +38374,9 @@ var Likes = function (_Component) {
 		value: function addLikes(experienceId, userId) {
 			var _this2 = this;
 
-			var ROOT_URL = '/api/likes/';
+			var URL = '/api/likes/';
 
-			_axios2.default.post('' + ROOT_URL + experienceId + '/' + userId).then(function (data) {
+			_axios2.default.post('' + URL + experienceId + '/' + userId).then(function (data) {
 				_this2.props.fetchLikes(_this2.props.id);
 			}).catch(function (error) {
 				console.log(error);
@@ -38387,9 +38387,9 @@ var Likes = function (_Component) {
 		value: function deleteLikes(experienceId, userId) {
 			var _this3 = this;
 
-			var ROOT_URL = '/api/likes/';
+			var URL = '/api/likes/';
 
-			_axios2.default.delete('' + ROOT_URL + experienceId + '/' + userId).then(function (data) {
+			_axios2.default.delete('' + URL + experienceId + '/' + userId).then(function (data) {
 				_this3.props.fetchLikes(_this3.props.id);
 			}).catch(function (error) {
 				console.log(error);
@@ -39176,7 +39176,7 @@ var ExploreLocations = function (_Component) {
     value: function componentWillMount() {
       var that = this;
       _jquery2.default.ajax({
-        url: 'http://localhost:2222/api/explore/country/' + this.props.locationId,
+        url: '/api/explore/country/' + this.props.locationId,
         method: 'GET',
         success: function success(data) {
           that.setState({ location: data });

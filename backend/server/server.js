@@ -8,6 +8,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./models');
+const seedFunction = require('./seeds');
 const indexRouter = require('../routes').routes;
 const uuid = require('uuid');
 const passport = require('./config/passport');
@@ -15,7 +16,8 @@ const passport = require('./config/passport');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
-const models = require('./models');
+// const models = require('./models');
+
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 app.use(cors())
@@ -56,6 +58,7 @@ app.use('/api/comments', indexRouter.Comments);
 app.use('/api/likes', indexRouter.Likes);
 app.use('/api/experiences', indexRouter.Experiences);
 app.use('/api/', indexRouter.Login);
+app.use('/api/data', indexRouter.Data);
 
 
 app.get('/*', (req, res) => {
@@ -66,9 +69,7 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
 
-
 app.listen(process.env.PORT || 2222, function(){
-
   console.log('CORS-enabled web server listening at https://localhost:2222');
 });
 
