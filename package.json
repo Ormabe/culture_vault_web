@@ -90,8 +90,7 @@
     "sequelize-cli": "^2.5.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^2.2.1",
-    "webpack-livereload-plugin": "^0.10.0"
+    "webpack": "^2.2.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
