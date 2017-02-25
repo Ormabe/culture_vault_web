@@ -8,7 +8,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./models');
-const seedFunction = require('./seeds');
 const indexRouter = require('../routes').routes;
 const uuid = require('uuid');
 const passport = require('./config/passport');
@@ -17,7 +16,6 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
 const models = require('./models');
-seedFunction();
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 app.use(cors())
