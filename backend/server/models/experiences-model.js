@@ -15,7 +15,8 @@ module.exports = function(sequelize, DataTypes) {
 
     image: {
       type:DataTypes.STRING(2000)
-    },
+    }
+    ,
 
     songURI: {
       type:DataTypes.STRING(2000)

@@ -57,12 +57,11 @@ app.use('/api/explore', indexRouter.Explore);
 app.use('/api/comments', indexRouter.Comments);
 app.use('/api/likes', indexRouter.Likes);
 app.use('/api/experiences', indexRouter.Experiences);
-app.use('/api/', indexRouter.Login);
 app.use('/api/data', indexRouter.Data);
+app.use('/api/', indexRouter.Login);
 
 
 app.get('/*', (req, res) => {
-
   console.log('USER ======>>>>>>', req.user);
   console.log('isAuthenticated ======>>>>>>', req.isAuthenticated());
 
@@ -70,7 +69,7 @@ app.get('/*', (req, res) => {
 });
 
 app.listen(process.env.PORT || 2222, function(){
-  console.log('CORS-enabled web server listening at https://localhost:2222');
+  console.log('CORS-enabled web server listening');
 });
 
 module.exports = app;

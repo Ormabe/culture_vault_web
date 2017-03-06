@@ -13,11 +13,10 @@ const getAllUsers = ((req, res) => {
     res.send(err);
   });
 });
-
+//
 const createNewUser = ((req, res) => {
   return Users.findOrCreate({
     where: {
-      username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     },
@@ -29,6 +28,31 @@ const createNewUser = ((req, res) => {
     res.send(err);
   });
 });
+
+// const createNewUser = ((req, res) => {
+//   return Users.findOrCreate({
+//     where: {
+//       email: req.body.email,
+//       password: req.body.password,
+//     },
+//   })
+//   .then((req, res) => {
+//     passport.authenticate('local', function(err, user, info) {
+//       console.log('AUTH USER >>>>>>', user)
+//       if (err) { return next(err); }
+//       if (!user) { res.status(401).end(); return; }
+//       req.logIn(user, function(err) {
+//         if (err) { res.status(401).end(); return; }
+//         // res.send(JSON.stringify(user)).end();
+
+//    
+//       });
+//     })
+//   })
+//   .catch((err) => {
+//     res.send(err);
+//   });
+// });
 
 const findUserByUsername = ((req, res) => {
   Users.findAll({
@@ -144,10 +168,7 @@ const findLoginUser = (req,res) => {
     .then(likes => userProfile.likes = likes)
 
     .then(data => res.send(userProfile))
-    .catch(err => {
-    	console.log(err)
-    	res.status(500).send(err)
-     });
+    .catch(err => res.status(500).send(err));
 }
 
 
